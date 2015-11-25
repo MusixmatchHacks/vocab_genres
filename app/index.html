@@ -1,0 +1,318 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Genre with the largest vocabulary</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/material.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/ripples.css" />
+  <link rel="stylesheet" href="/bower_components/social-share-kit/dist/css/social-share-kit.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- <link rel="import" href="/bower_components/google-chart/google-chart.html"> -->
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+  <link rel="import" href="./disqus-thread.html">
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+  <!-- <div class="container-fluid"> -->
+  <!-- <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <h3 class="text-muted">MusixSavvy</h3>
+    </div> -->
+
+
+  <div class="jumbotron" id="title">
+    <!-- <div id="container title_text "> -->
+
+    <div id="logo">
+      <a href="https://www.musixmatch.com/">
+        <img src='./images/mxm_logo_white.png'>
+      </a>
+    </div>
+    <h1>Genre with the largest vocabulary</h1>
+    <h3>A comparison of lyrical vocabularies of representative artists of popular music genres</h3>
+    By
+    <em> <a href='https://twitter.com/neotheoen'>Varun Jewalikar</a></em> and
+    <em><a href='https://twitter.com/frcfr'>Federica Fragapane</a></em> at
+    <em><a href='https://www.musixmatch.com/'>Musixmatch</a></em>
+    <!-- </div> -->
+    <!-- <p class="lead">Always a pleasure scaffolding your apps.</p> -->
+    <!-- <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p> -->
+    <!-- <google-chart type='wordtree' options='{"title": "Distribution of days in 2001Q1"}' data="[['Phrases'],['Hello,'], ['it is me'], ['I was wondering if after all these years'], ['You would like to meet,'], ['to go over']]">
+      </google-chart> -->
+
+
+  </div>
+  <!-- </div> -->
+  <div class="article">
+
+    <section data-name='intro'>
+      <p class="">
+        A few months ago, here at <a href='https://www.musixmatch.com/'>Musixmatch</a>, we conducted a study titled <a href='http://lab.musixmatch.com/largest_vocabulary/'>‘The largest vocabulary in music’</a> (we suggest you to give it a quick read).
+        We studied the vocabularies of the 99 top selling musicians. A small section of that study was dedicated to comparing vocabularies across genres but this wasn’t a fair comparison. Mainly because the 99 top selling musicians split by genre aren’t
+        necessarily the representative artists for a given genre and the number of artists considered in various genres is unequal so the analysis was skewed.
+      </p>
+      <p class="">So we decided to dig deeper into comparing the vocabulary across various popular genres.</p>
+      <h1 class='heading'>
+        <span>Formulation of the study</span>
+      </h1>
+      <p>These are some of the issues encountered and respective choices taken for simplifying and reducing the scope of the study. </p>
+      <h3 class='sub_heading'>
+        <span>Which genres should be considered</span>
+      </h3>
+      <p>
+        There are a lot of genres out there (elegantly illustrated by this <a href='http://everynoise.com/engenremap.html'>map of genres</a>). To consider all of these would make this study quite broad and complicated so we decided to narrow our scope
+        to the following 7 popular genres.
+      </p>
+      <div id='all_genres'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <h3 class='sub_heading'>
+        <span>Finding representative artists for each genre</span>
+      </h3>
+      <p>
+        Ideally, we would want a crowdsourced list (musicologists/avid listeners voting for which artists are representative of each genre) of artists for each genre. This would be quite a task in itself. So instead we consider the list of most searched artists
+        in each genre as the representative artists. These lists can be easily retrieved from google as shown below
+      </p>
+      <div id='google_lists'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <p>These are the representative artists for each genre</p>
+      <div id='all_artists_genre'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <p>These lists aren’t as foolproof as the crowdsourcing approach could be but you’d agree that they do represent each of these genres to a good extent. Looking at the genres and their representative artists, maybe you can already wager a bet on which
+        genres/artists might come out on the top but there are a lot of surprises in store.
+      </p>
+
+      <h3 class='sub_heading'>
+        <span>Disparity in catalogue sizes of various artists</span>
+      </h3>
+      <p>
+        Some artists are very prolific (releasing more than an album every year) while some only release a few albums during their whole career. If we directly compare the vocabulary sizes of these artists the analysis will be skewed in favour of the more prolific
+        artists. Instead we use the following definition at the
+      </p>
+      <blockquote>
+        <em>Vocabulary Size</em> is the number of unique words used by an artist across the first 10000 words(or less) written by them.</blockquote>
+      <p>Generally this covers around 3-4 albums and is a good representation of the writing style of an artist.</p>
+
+    </section>
+
+
+
+    <section data-name='overview'>
+      <h1 class='heading'>
+        <span>Bird’s eye view</span>
+      </h1>
+      <div id='data_overview'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <p>You can see this is quite a large dataset and this study quickly became quite dense with information and concepts, so we decided to split the analysis in two parts. Part I (the current page) focuses on comparison of genres and representative artists
+        by vocabulary size while part II focuses on delving deeper into words and phrases most commonly used in these genres. Please subscribe if you’d like to be informed about when part II is available and for updates about other studies.
+      </p>
+    </section>
+
+    <section data-name='genre_comparison'>
+      <h1 class='heading'>
+        <span>Comparison of genres</span>
+      </h1>
+      <div id='genre_comparison'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <h3 class='sub_heading'>
+        <span>No points for guessing</span>
+      </h3>
+
+      <p>It should be no surprise that hiphop is the genre with the highest average vocabulary. In our previous study, hiphop artists had dominated the overall vocabulary rankings. The lyrics are dense and lots of slang is used which gives rappers a big
+        lead over other wordsmiths. Also, Hiphop leads the other genres by a healthy margin (it leads the next genre by 430 words on average).</p>
+
+      <h3 class='sub_heading'>
+        <span>Surprise surprise</span>
+      </h3>
+
+      <p>We expected a more poetry driven genre like Folk or Country to take the second place but were pleasantly surprised to find that it is actually Heavy Metal. A simple guess for this could be the myriad of complicated concepts heavy metal lyrics try
+        to address which calls for using a lot of new words. Also Heavy Metal leads the following genres by a healthy margin of 70 words on average.</p>
+
+
+      <h3 class='sub_heading'>
+        <span>The runners up</span>
+      </h3>
+
+      <p>Folk and Rock come in at #3 and #4 respectively. The difference in the average vocabulary sizes for these two is around 31 words. They are followed closely by Country and Indie Rock at #5 and #6. The average vocabulary these four genres is x words.
+        It defines the ‘plateau’ region of this study. </p>
+
+      <h3 class='sub_heading'>
+        <span>Last but not the least</span>
+      </h3>
+
+      <p>Pop has the least average vocabulary of all the genres. But generally pop artists have a wider reach (across barriers of language and country) as compared to the other genres. One could guess that the simplicity of the lyrics would be one of the
+        defining features of a pop song. </p>
+
+    </section>
+
+    <section data-name='artist_comparison'>
+      <h1 class="heading">
+        <span>Comparison between artists</span>
+      </h1>
+      <div id='artist_comparison'>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </section>
+
+    <section class='conclusion'>
+      <h1 class="heading">
+        <span>Conclusion</span>
+      </h1>
+      <p>It goes without saying that vocabulary size is just a number and it can’t quantify the simplicity, complexity or profoundness of what a song conveys. As previously stated, it is just a fun metric to look at our favourite genres and artists in a
+        new light.
+      </p>
+    </section>
+
+    <section class='social'>
+      <div class="ssk-sm ssk-group ssk-count" data-url="http://lab.musixmatch.com/hello_martha/" data-text="A data visualization" data-via="Musixmatch">
+        <a href="" class="ssk ssk-facebook"></a>
+        <a href="" class="ssk ssk-twitter"></a>
+      </div>
+    </section>
+    <disqus-thread shortname="musixmatchlab"></disqus-thread>
+  </div>
+
+
+  <!-- <div class="row marketing">
+      <div class="col-lg-6">
+        <h4><a href="https://html5boilerplate.com/">HTML5 Boilerplate</a></h4>
+        <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+
+
+
+        <h4><a href="http://getbootstrap.com/">Bootstrap</a></h4>
+        <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
+
+        <h4><a href="http://modernizr.com/">Modernizr</a></h4>
+        <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+
+      </div> -->
+
+  </div>
+
+  <div class="footer">
+    <!-- <p>
+      <span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
+  </div>
+  </div>
+
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/d3/d3.js"></script>
+  <script src="/bower_components/bootstrap-material-design/dist/js/material.js"></script>
+  <script src="/bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+  <script src="/bower_components/social-share-kit/dist/js/social-share-kit.min.js"></script>
+  <!-- endbower -->
+
+  <!-- endbuild -->
+
+
+  <!-- build:js(.) scripts/plugins.js -->
+  <script src="/bower_components/bootstrap/js/affix.js"></script>
+  <script src="/bower_components/bootstrap/js/alert.js"></script>
+  <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+  <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+  <script src="/bower_components/bootstrap/js/modal.js"></script>
+  <script src="/bower_components/bootstrap/js/transition.js"></script>
+  <script src="/bower_components/bootstrap/js/button.js"></script>
+  <script src="/bower_components/bootstrap/js/popover.js"></script>
+  <script src="/bower_components/bootstrap/js/carousel.js"></script>
+  <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap/js/collapse.js"></script>
+  <script src="/bower_components/bootstrap/js/tab.js"></script>
+  <!-- endbuild -->
+
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+
+  <!-- endbuild -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-64935343-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">
+    SocialShareKit.init();
+    // Zoomerang.listen('section img');
+    // Zoomerang.config({
+    //   'maxWidth': $(window).width() - 10,
+    //   'maxHeight': $(window).height() - 10
+    // })
+    // window.addEventListener('resize', function() {
+    //   Zoomerang.config({
+    //     'maxWidth': $(window).width() - 10,
+    //     'maxHeight': $(window).height() - 10
+    //   })
+    // }, true);
+  </script>
+</body>
+
+</html>
